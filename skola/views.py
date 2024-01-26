@@ -14,3 +14,7 @@ def vypis_students(request):
 def vypis_triedy(request):
     triedy = Trieda.objects.all().order_by("nazov")
     return render(request, "skola/index.html", {"triedy":triedy})
+
+def vypis_ucitelia(request):
+    ucitelia = Ucitel.objects.all().order_by("priezvisko")
+    return render(request, "skola/index.html", {"ucitelia":ucitelia})
